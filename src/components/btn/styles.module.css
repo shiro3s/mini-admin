@@ -1,0 +1,32 @@
+.container {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  height: 32px;
+  box-sizing: border-box;
+  padding: 8px 12px;
+  cursor: pointer;
+  white-space: nowrap;
+  outline: none;
+  font-weight: 500;
+  user-select: none;
+  appearance: none;
+  border-radius: 4px;
+  font-size: 14px;
+  border: 1px solid #d1d9e0;
+  background-color: #f6f8fa;
+  color: #606266;
+
+  &:hover {
+    background-color: #eff2f5;
+  }
+
+  &:active {
+    background-color: #e6eaef;
+  }
+}
+
+.container[data-block="true"] {
+  width: 100%;
+}
