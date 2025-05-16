@@ -1,4 +1,5 @@
 import {Navigate} from "react-router-dom"
+import {useAppSelector} from "@/libs/redux"
 
 interface Props {
   children: React.ReactNode
@@ -7,8 +8,9 @@ interface Props {
 export const AuthRoute: React.FC<Props> = ({
   children
 }) => {
-  // not login
-  if (0) return <Navigate to="/login" replace />
+  const isAuth = useAppSelector((state) => state.auth.isAuthenticated);
 
-  return children
+  if (isAuth) return children
+
+  return <Navigate to="/login" replace />
 }
