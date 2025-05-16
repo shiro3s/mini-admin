@@ -1,6 +1,7 @@
 import type React from "react";
+import type { UseFormRegisterReturn } from "react-hook-form";
 
-import styles from "./styles.module.css"
+import styles from "./styles.module.css";
 
 interface Props {
 	name?: string;
@@ -12,6 +13,7 @@ interface Props {
 	autoComplete?: string;
 	placeHolder?: string;
 	tabIndex?: number;
+	register?: UseFormRegisterReturn;
 }
 
 export const TextInput: React.FC<Props> = ({
@@ -24,6 +26,7 @@ export const TextInput: React.FC<Props> = ({
 	autoComplete,
 	placeHolder,
 	tabIndex,
+	register
 }) => {
 	return (
 		<div className={styles.container}>
@@ -40,6 +43,7 @@ export const TextInput: React.FC<Props> = ({
 					autoComplete={autoComplete}
 					placeholder={placeHolder}
 					tabIndex={tabIndex}
+					{...register}
 				/>
 			</div>
 		</div>

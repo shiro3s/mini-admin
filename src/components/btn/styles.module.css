@@ -27,6 +27,14 @@
   }
 }
 
+.container:disabled {
+  cursor: not-allowed;
+  background-color: #eff2f5;
+  border-color: #818b981a;
+  color: #818b98;
+}
+
 .container[data-block="true"] {
   width: 100%;
 }
+
