@@ -23,7 +23,7 @@ export const TextInput: React.FC<Props> = ({
 	disabled,
 	minLength,
 	maxLength,
-	autoComplete,
+	autoComplete = "off",
 	placeHolder,
 	tabIndex,
 	register

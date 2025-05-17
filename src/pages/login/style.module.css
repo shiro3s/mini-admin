@@ -31,6 +31,12 @@
   margin-bottom: 16px;
 }
 
+.error {
+  font-size: 12px;
+  margin-top: 3px;
+  color: #e5534b;
+}
+
 .label {
   display: inline-block;
   padding: 4px 0;
