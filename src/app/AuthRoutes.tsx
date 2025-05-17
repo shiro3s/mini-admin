@@ -5,7 +5,7 @@ interface Props {
   children: React.ReactNode
 }
 
-export const AuthRoute: React.FC<Props> = ({
+export const AuthRoutes: React.FC<Props> = ({
   children
 }) => {
   const isAuth = useAppSelector((state) => state.auth.isAuthenticated);

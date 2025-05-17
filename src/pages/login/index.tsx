@@ -1,15 +1,23 @@
 import type React from "react";
+import { Navigate, useLocation } from "react-router-dom";
 
 import { Btn } from "@/components/btn";
 import { TextInput } from "@/components/text-input";
 import { PasswordInput } from "@/components/password-input";
+import { useAppSelector } from "@/libs/redux";
+
 import { useLoginForm } from "./useLogin";
 
 import styles from "./style.module.css";
 
 export const LoginPage: React.FC = () => {
+	const location = useLocation();
+	const isAuth = useAppSelector((state) => state.auth.isAuthenticated);
 	const { isSubmitting, register, handleSubmit, onSubmit, errors } =
 		useLoginForm();
+
+	const from = location.state?.from.pathname || "/dashboard";
+	if (isAuth) return <Navigate to={from} replace />;
 
 	return (
 		<div className={styles.container}>
