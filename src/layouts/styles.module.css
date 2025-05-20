@@ -12,6 +12,10 @@
   overflow-x: hidden
 }
 
+.content[data-open="true"] {
+  margin-left: 240px;
+}
+
 .main {
   flex-grow: 1;
   padding: 20px;
