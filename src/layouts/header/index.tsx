@@ -20,7 +20,6 @@ export const Header: React.FC<Props> = ({
         >
           <Menu size={24} />
         </button>
-        <h2 className={styles.title}>Title</h2>
       </div>
 
       <div className={styles.right}>
