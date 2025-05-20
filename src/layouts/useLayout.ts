@@ -1,9 +1,14 @@
-import {useState} from "react";
+import { useCallback, useState } from "react";
 
 export const useLayout = () => {
-  const [sidebarOpen, setSidebarOpen] = useState(true);
+	const [sidebarOpen, setSidebarOpen] = useState(true);
 
-  return {
-    sidebarOpen
-  }
-}
+	const toggleSidebar = useCallback(() => {
+		setSidebarOpen((pre) => !pre);
+	}, []);
+
+	return {
+		sidebarOpen,
+		toggleSidebar,
+	};
+};

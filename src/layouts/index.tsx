@@ -10,16 +10,13 @@ interface Props {
 }
 
 export const Layout: React.FC<Props> = ({ children }) => {
-	const { sidebarOpen } = useLayout();
+	const { sidebarOpen, toggleSidebar } = useLayout();
 
 	return (
 		<div className={styles.container}>
-			<Sidebar />
-			<div
-        className={styles.content}
-        data-open={sidebarOpen}
-      >
-				<Header />
+			<Sidebar sidebarOpen={sidebarOpen} />
+			<div className={styles.content} data-open={sidebarOpen}>
+				<Header toggleSidebar={toggleSidebar} />
 				<div className={styles.main}>{children}</div>
 			</div>
 		</div>

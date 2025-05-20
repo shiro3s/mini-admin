@@ -3,11 +3,21 @@ import { Menu, Bell, UserCircle } from "lucide-react";
 
 import styles from "./styles.module.css"
 
-export const Header: React.FC = () => {
+interface Props {
+  toggleSidebar: () => void;
+}
+
+export const Header: React.FC<Props> = ({
+  toggleSidebar
+}) => {
   return (
     <header className={styles.header}>
       <div className={styles.left}>
-        <button type="button" className={styles.menu}>
+        <button 
+          type="button" 
+          className={styles.menu}
+          onClick={toggleSidebar}
+        >
           <Menu size={24} />
         </button>
         <h2 className={styles.title}>Title</h2>

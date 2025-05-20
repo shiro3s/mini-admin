@@ -1,0 +1,28 @@
+.item {
+  list-style: none;
+  margin-bottom: 5px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  border-radius: 6px;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: #4a5568;
+  font-size: 0.95rem;
+  position: relative;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.link:hover {
+  background-color: #e9ecef;
+  color: #1d2125;
+}
+
+.name {
+  margin-left: 12px;
+  flex-grow: 1;
+}
+

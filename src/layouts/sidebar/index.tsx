@@ -1,23 +1,31 @@
 import React from "react";
-import { Home } from "lucide-react";
+import { Home, Users } from "lucide-react";
 
 import { SidebarItem } from "../sidebar-item";
 
 import styles from "./styles.module.css"
 
+interface Props {
+  sidebarOpen: boolean
+}
+
 const menuItems = [
 	{ name: "ダッシュボード", icon: <Home size={20} />, path: "/dashboard" },
+  { name: "ユーザー管理", icon: <Users size={20} />, path: "/users"}
 ];
 
-export const Sidebar: React.FC = () => {
+export const Sidebar: React.FC<Props> = ({sidebarOpen}) => {
 	return (
-		<aside className={styles.sidebar}>
-			<div>
-				<h1>管理画面</h1>
+		<aside 
+      className={styles.sidebar}
+      data-open={sidebarOpen}
+    >
+			<div className={styles.header}>
+				<h1 className={styles.title}>Admin Template</h1>
 			</div>
 
-			<nav>
-				<ul>
+			<nav className={styles.nav}>
+				<ul className={styles.list}>
 					{menuItems.map(({ name, icon, path }) => (
 						<SidebarItem name={name} icon={icon} path={path} key={name} />
 					))}
